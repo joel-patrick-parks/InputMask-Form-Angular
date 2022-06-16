@@ -1,0 +1,22 @@
+<div class="form-control">
+  <div class="form-header">
+    <span>User Information</span>
+  </div>
+  <form class="form-body" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+    <div class="form-element">
+      <wj-input-mask #name id="name" [placeholder]="'Name'" formControlName="name"></wj-input-mask>
+    </div>
+    <div class="form-element">
+      <wj-input-mask #email id="email" [placeholder]="'Email'" formControlName="email"></wj-input-mask>
+    </div>
+    <div class="form-element">
+      <wj-input-mask #phone id="phone" [mask]="'000-000-0000'" [placeholder]="'Phone Number'" [isRequired]="false" [promptChar]="'#'" [value]="''" (valueChanged)="validateInput(phone)" formControlName="phone"></wj-input-mask>
+    </div>
+    <div class="form-element">
+      <wj-input-mask #social id="social" [mask]="'000-00-0000'" [placeholder]="'Social Security Number'" [isRequired]="false" [promptChar]="'*'" [value]="''" (valueChanged)="validateInput(social)" formControlName="social"></wj-input-mask>
+    </div>
+    <div class="form-footer">
+      <button class="form-button" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
